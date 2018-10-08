@@ -13,22 +13,28 @@ header {
     line-height: 100px;
 }
 
+form {
+    display: inline-block;
+}
+
 button {
     background-color: #ddd;
     cursor: pointer;
 }
 
 table {
-    margin: auto;
     width: 100%;
-    font-family: arial, sans-serif;
     border-collapse: collapse;
 }
 
-thead {
+th {
     background-color: #ddd;
+    border: 1px solid #000;
+    text-align: left;
+    padding: 8px;
 }
-td, th {
+
+td {
     border: 1px solid #000;
     text-align: left;
     padding: 8px;
@@ -38,22 +44,27 @@ tr:nth-child(even) {
     background-color: #ddd;
 }
 
-.right {
-    display: inline-block;
-    position: absolute;
-    right: 0px;
+tr:nth-child(odd) {
+    background-color: #fff;
 }
 
-.center div {
-    margin: auto;
-    width: 95%;
+tr:hover {
+    background-color: #ffff00;
 }
 
 .exceed {
     background-color: #ff0000;
 }
 
-#tableDiv {
+.tableDiv {
     overflow-x: auto;
 }
 
+#totalMonthly{
+    text-align: right;
+}
+
+.content {
+    margin: auto;
+    width: 95%;
+}

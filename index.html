@@ -1,64 +1,53 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Weekend1_Salary_Calc</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="jquery-3.3.1.min.js"></script>
-    <script src="client.js"></script>
-</head>
-<body>
-    <header>
-        <h1>Salary Calculator</h1>
-    </header>
-    <div class="center">
-
-        <div> <!-- input div for adding employees -->
-            <h2>Add Employee</h2>
-            <form id="employeeInput">
-                <input id="firstName" type="text" placeholder="First Name" required/>
-                <input id="lastName" type="text" placeholder="Last Name" required/>
-                <input id="id" type="text" placeholder="ID" required/>
-                <input id="jobTitle" type="text" placeholder="Title" required/>
-                <input id="annualSalary" type="number" placeholder="Annual Salary" required/>
-                <button id="addEmployee">Submit</button>
-            </form>
-        </div>
-
-        <div> <!-- table div for displaying employees -->
-            <h2>Employees</h2>
-            <div id="tableDiv">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>ID Number</th>
-                            <th>Job Title</th>
-                            <th>Annual Salary</th>
-                            <th>Remove</th>
-                        </tr>
-                    </thead>
-                    <tbody id="employeeList">
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>1234</td>
-                            <td>Manager</td>
-                            <td>75,000</td>
-                            <td><button>Remove</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Weekend 1 Challenge: Salary Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="client.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Salary Calculator</h1>
+        </header>
+        <div class="content">
+            <div> <!-- input div for adding employees -->
+                <h2>Add Employee</h2>
+                <form id="employeeInput">
+                    <input id="firstName" type="text" placeholder="First Name" required/>
+                    <input id="lastName" type="text" placeholder="Last Name" required/>
+                    <input id="id" type="text" placeholder="ID" required/>
+                    <input id="jobTitle" type="text" placeholder="Title" required/>
+                    <input id="annualSalary" type="number" placeholder="Annual Salary" required/><br>
+                    <button id="addEmployee">Submit</button>
+                </form>
+            </div>
+            <div> <!-- table div for displaying employees -->
+                <h2>Employees</h2>
+                <div class="tableDiv">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>ID Number</th>
+                                <th>Job Title</th>
+                                <th>Annual Salary</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody class="employeeList">
+                            <!-- JQ append -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div> <!-- display total monthly expense -->
+                <h2 id="totalMonthly">Total Monthly: $0</h2>
             </div>
         </div>
-
-        <div id="totalMonthly"> <!-- display total monthly expense -->
-            <h2>Total Monthly: $0</h2>
-        </div>
-
-    </div>
-</body>
+    </body>
 </html>
