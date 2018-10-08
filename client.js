@@ -91,8 +91,9 @@ function removeEmployee() {
             $(this).closest('tr').find('td').remove();
             // logic for updating total monthly...
             appendMonthlyTotal();
-            return true;
         } // end if 'td' has idNum remove 'tr'???
+    return true;
+
     } // end for loop
 } // end removeEmployee
 
