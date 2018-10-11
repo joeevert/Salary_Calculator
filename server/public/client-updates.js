@@ -1,3 +1,6 @@
+console.log('client-updates.js');
+
+
 let totalMonthlySalaries = 20000;
 let employeesArray = [];
 let months = 12;
@@ -21,7 +24,7 @@ function readyNow() {
 function addClickListeners() {
     $('#addEmployeeBtn').on('click', addEmployee);
     $('#addEmployeeBtn').on('click', appendMonthlyTotal);
-    $('.employeeList').on('click', '.removeEmployee', removeEmployee);
+    $('.employeeList').on('click', '.removeBtn', removeEmployee);
 }
 
 // add new employee
@@ -60,7 +63,7 @@ function appendEmployee() {
         let idNum = `<td>${employee.idNum}</td>`;
         let jobTitle = `<td>${employee.jobTitle}</td>`;
         let annualSalary = `<td>${employee.annualSalary}</td>`;
-        let removeBtn = '<td><button class="removeEmployee">Remove</button></td>';
+        let removeBtn = '<td><button class="removeBtn">Remove</button></td>';
         let element = `<tr>${firstName} ${lastName} ${idNum} ${jobTitle} ${annualSalary} ${removeBtn}</tr>`;
         $('table tbody').append(element);
     } // end for-of
@@ -73,15 +76,17 @@ function appendMonthlyTotal() {
 
     let totalMonthly = $('#totalMonthly');
     totalMonthly.empty();
+    totalMonthly.removeClass('exceed');
+
     
     for (let salary of employeesArray) {   
         totalSalaries += salary.annualSalary / months;
         console.log(totalSalaries);
-        if (totalSalaries >= totalMonthlySalaries) {
-            totalMonthly.addClass('exceed');
-            console.log('exceeded budget');
-        } // end exceeds $20,000
     }
+    if (totalSalaries >= totalMonthlySalaries) {
+        totalMonthly.addClass('exceed');
+        console.log('exceeded budget');
+    } // end exceeds $20,000
     totalMonthly.append(`Total Monthly: $${totalSalaries.toFixed(2)}`);
     return totalSalaries;
 } // end monthly appendMonthlyTotal
@@ -89,19 +94,22 @@ function appendMonthlyTotal() {
 // remove employee
 function removeEmployee() {
     console.log('remove clicked');
-    let selectedItem = $(this).closest('tr').find('td').text();
-    console.log(selectedItem);
-    
+    let selectedItem = $(this).closest('tr').text();
+    console.log('selected', selectedItem);
     for (let i = 0; i < employeesArray.length; i++) {
-        if (selectedItem.includes(employeesArray[i].idNum)) {
+        if (selectedItem.includes(employeesArray[i].firstName)) {
             employeesArray.splice(i, 1);
-            $(this).closest('tr').find('td').remove();
+            $(this).closest('tr').remove();
             
             // logic for updating total monthly
-            appendMonthlyTotal();
         } // end if 'td' has idNum remove 'tr'???
+
     } // end for loop
+    appendMonthlyTotal();
+    appendEmployee();
     console.log(employeesArray);
+    return true;
+
 } // end removeEmployee
 
 // clear input fields
@@ -112,10 +120,3 @@ function clearInputs() {
     $('#jobTitle').val('');
     $('#annualSalary').val('');
 } // end clearInputs
-
-//remove employee
-function removeEmployee() {
-    console.log('remove clicked');
-    $(this).closest('tr').remove();
-    console.log(employeesArray);
-}
