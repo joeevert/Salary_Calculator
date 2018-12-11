@@ -80,13 +80,14 @@ function appendMonthlyTotal() {
     totalMonthly.append(`Total Monthly: $${totalSalaries.toFixed(2)}`);
 } // end monthly appendMonthlyTotal
 
+// check if budget is over $20,000
 function checkBudget(){
     if( totalSalaries > monthlyBudget ){
         $('#totalMonthly').addClass('exceed');
     } else {
         $('#totalMonthly').removeClass('exceed');
     }
-}
+} // end checkBudget
 
 // removes employee
 function removeEmployee() {

@@ -13,10 +13,6 @@ The Salary Calculator application records employee salaries and adds salaries up
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
-
-Before you get started, make sure you have the following software installed:
-
 ### Installing
 
 Steps to get the development environment running.
