@@ -1,44 +1,34 @@
-# Weekend Challenge 1: Salary Calculator
-Create an application that records employee salaries and adds salaries up to report monthly costs. 
+# Salary Calculator
 
-## Topics Covered
-- JavaScript
-- jQuery - Selectors, append, and event handling
+The Salary Calculator application records employee salaries and adds salaries up to report monthly costs. The form has inputs that collect an employee's first name, last name, ID number, job title, and annual salary. The `Submit` button collects the form information, stores it to calculate monthly costs, appends the information to the DOM, and clears the input fields. If the total monthly cost exceeds $20,000, a red background color is added to the total monthly cost. The `Remove` button removes an employee from the DOM and also updates the total monthly cost.
 
-## Assignment
+## Built With
 
-The application should have an input form that collects _employee first name, last name, ID number, job title, annual salary_.
+* Javascript
+* jQuery
+* HTML
+* CSS
 
-A 'Submit' button should collect the form information, store the information to calculate monthly costs, append information to the DOM and clear the input fields. Using the stored information, calculate monthly costs and append this to the to DOM. If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
+## Getting Started
 
-Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Files Provided
-No files have been provided. Fork and clone this repository or create a new GitHub repository to get started. Make sure to commit regularily!
+### Prerequisites
 
-### Wireframe
+Before you get started, make sure you have the following software installed:
 
-![Wireframe](salary-calc-wireframe.png)
+### Installing
 
-## Stretch Mode
+Steps to get the development environment running.
 
-Create an `Employee` class to store the information about each new employee in an Array.
+1. Download this project.
+2. Run `npm start`
+3. Navigate to `localhost:5000`
 
-Add styling or extra functionality that fits with the theme of this assignment.
+### Author
 
-Once the employee is deleted, update the total spend on salaries account for this employee's removal. This will require that the logic knows which element was removed. You will need to use `.text()` as a getter or look into jQuery's `.data()` function. This is tricky! 
+Joe Evert
 
-## Reminder About Modes
+### Acknowledgements
 
-Above, we introduced the concept of levels of difficulty. "Mode" is how we will typically refer to each level. Below is a brief explanation of
-
-* what to expect when attempting each mode
-* if they are required or not
-
-Mode | Description
---- | ---
-Base | required
-Stretch | optional, stretches your understanding and may require additional research
-
-## Assignment Submission
-Check in your repo, then turn in your work via the Prime Academy Assignment Application at [http://primeacademy.io](http://primeacademy.io), as usual and don't hesitate to hit up the Slack channel as needed!
+Prime Digital Academy

@@ -98,13 +98,6 @@ tr:hover {
     background-color: #ff0000;
 }
 
-.tableDiv {
-    margin: 0px 20px;
-    float: left;
-    width: 70%;
-    overflow-x: auto;
-}
-
 #totalMonthly{
     margin-top: 20px;
     text-align: right;
@@ -117,5 +110,21 @@ tr:hover {
 .col-25 {
     float: left;
     width: 25%;
+    height: 800px;
     background-color: #ddd;
+}
+
+.tableDiv {
+    margin: 0px 20px;
+    float: left;
+    width: 70%;
+    height: 775px;
+    overflow: scroll;
+}
+
+.footer {
+    float: left;
+    width: 70%;
+    height: 25px;
+    text-align: center;
 }
