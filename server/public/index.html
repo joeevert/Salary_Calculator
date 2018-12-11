@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Weekend 1 Challenge: Salary Calculator</title>
+        <title>Salary Calculator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
         <script src="vendors/jquery-3.3.1.min.js"></script>
@@ -16,38 +16,39 @@
             <h1>Salary Calculator</h1>
         </header>
         <div class="content">
-            <div> <!-- input div for adding employees -->
-                <h2>Add Employee</h2>
-                <form id="employeeInput">
+            <div class="col-25"> <!-- input div for adding employees -->
+                <h2 id="addEmployeeHeader">Add Employee</h2>
+                <form>
+                    <label for="firstName">First Name:</label>
                     <input id="firstName" type="text" placeholder="First Name" required/>
+                    <label for="lastName">Last Name:</label>
                     <input id="lastName" type="text" placeholder="Last Name" required/>
-                    <input id="id" type="text" placeholder="ID" required/>
-                    <input id="jobTitle" type="text" placeholder="Title" required/>
-                    <input id="annualSalary" type="number" placeholder="Annual Salary" required/><br>
-                    <button id="addEmployeeBtn">Submit</button>
+                    <label for="id">Employee ID:</label>
+                    <input id="id" type="text" placeholder="Employee ID" required/>
+                    <label for="jobTitle">Job Title:</label>
+                    <input id="jobTitle" type="text" placeholder="Job Title" required/>
+                    <label for="annualSalary">Annual Salary:</label>
+                    <input id="annualSalary" type="number" placeholder="Annual Salary" required/>
+                    <input id="addEmployeeBtn" type="submit"/>
                 </form>
             </div>
-            <div> <!-- table div for displaying employees -->
-                <h2>Employees</h2>
-                <div class="tableDiv">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>ID Number</th>
-                                <th>Job Title</th>
-                                <th>Annual Salary</th>
-                                <th>Remove</th>
-                            </tr>
-                        </thead>
-                        <tbody class="employeeList">
-                            <!-- JQ append -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div> <!-- display total monthly expense -->
+            <div class="tableDiv">
+                <h2 id="employeesHeader">Employee List</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>ID Number</th>
+                            <th>Job Title</th>
+                            <th>Annual Salary</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody class="employeeList">
+                        <!-- JQ append employees -->
+                    </tbody>
+                </table>
                 <h2 id="totalMonthly">Total Monthly: $0.00</h2>
             </div>
         </div>

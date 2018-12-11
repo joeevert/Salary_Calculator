@@ -2,7 +2,6 @@ body {
     font-family: arial, sans-serif;
     background-color: #fff;;
     margin: auto;
-    width: 75%;
 }
 
 header {
@@ -13,13 +12,56 @@ header {
     line-height: 100px;
 }
 
-form {
-    display: inline-block;
+h1, h2 {
+    margin: 0;
+}
+
+#addEmployeeHeader {
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #666;
+    color: #fff;
+}
+
+#employeesHeader {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+input {
+    width: 75%;
+    margin: 0px 0px 15px 20px;    
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
+}
+
+label {
+    margin: 0px 0px 0px 15px;    
+    padding: 10px 10px 10px 0;
+    display: block;
 }
 
 button {
-    background-color: #ddd;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
+    display: block;
+}
+
+input[type=submit] {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    margin: 0px 0px 15px 20px;    
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: block;
 }
 
 table {
@@ -57,14 +99,23 @@ tr:hover {
 }
 
 .tableDiv {
+    margin: 0px 20px;
+    float: left;
+    width: 70%;
     overflow-x: auto;
 }
 
 #totalMonthly{
+    margin-top: 20px;
     text-align: right;
 }
 
 .content {
     margin: auto;
-    width: 95%;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    background-color: #ddd;
 }
