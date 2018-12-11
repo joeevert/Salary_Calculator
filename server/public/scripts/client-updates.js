@@ -1,5 +1,3 @@
-console.log('js');
-
 $(document).ready(readyNow);
 
 let monthlyBudget = 20000;
@@ -19,18 +17,16 @@ class Employee {
 
 function readyNow() {        
     addClickListeners();
-} // end readyNow
+}
 
 function addClickListeners() {
     $('#addEmployeeBtn').on('click', addEmployee);
-    //$('#addEmployeeBtn').on('click', appendMonthlyTotal);
     $('#employeeList').on('click', '.removeBtn', removeEmployee);
 }
 
 // add new employee
 function addEmployee() {
     event.preventDefault();
-    console.log('submit btn clicked');
     let firstNameIn = $('#firstName').val();
     let lastNameIn = $('#lastName').val();
     let idNumIn = $('#id').val();
@@ -44,7 +40,6 @@ function addEmployee() {
     }
     else {
         employeesArray.push(newEmployee);
-        console.log('adding', newEmployee);
         appendEmployees();
         appendMonthlyTotal();
         checkBudget();
@@ -73,7 +68,6 @@ function appendEmployees() {
 
 // append monthly cost
 function appendMonthlyTotal() {
-    console.log('in appendMonthlyTotal');
     // let totalSalaries = 0;
     totalSalaries = 0;
 
@@ -82,7 +76,6 @@ function appendMonthlyTotal() {
 
     for (let salary of employeesArray) {   
         totalSalaries += salary.annualSalary / months;
-        console.log(totalSalaries);
     }
     totalMonthly.append(`Total Monthly: $${totalSalaries.toFixed(2)}`);
 } // end monthly appendMonthlyTotal
@@ -98,9 +91,7 @@ function checkBudget(){
 // removes employee
 function removeEmployee() {
     let selectedItem = $(this).closest('tr').data('id');
-    console.log('selected', selectedItem);
-    
-
+    console.log('selectedItem id:', selectedItem);
     for (let i = 0; i < employeesArray.length; i++) {
         if (selectedItem.includes(employeesArray[i].idNum)) {
             employeesArray.splice(i, 1);
