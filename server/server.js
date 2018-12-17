@@ -11,7 +11,7 @@ const app = express();
 app.use( express.static('server/public') );
 
 // tell express to listen for requests on a specific port
-const port = 5000;
+const port = process.env.PORT || 5000;;
 app.listen(port, function () {
   console.log(`Express listening on port ${port}`);
 })
